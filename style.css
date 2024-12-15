@@ -1,0 +1,258 @@
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #757575;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Krub", sans-serif;
+  background-image: linear-gradient(to top, #dfe9f3, var(--blanco) 100%);
+}
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+.titulo span {
+  font-size: 2rem;
+}
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+@media (min-width: 480px) {
+  .boton {
+    width: auto;
+  }
+}
+
+.sombra {
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
+  box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 1);
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.nav-bg {
+  background-color: var(--secundario);
+}
+
+.navegacion-principal {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  navegacion-principal {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.navegacion-principal a {
+  color: var(--blanco);
+  padding: 1rem;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.navegacion-principal a:hover {
+  background-color: var(--primario);
+  color: var(--oscuro);
+}
+
+.hero {
+  background-image: url(hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.contenido-hero {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgb(0 0 0 /70%);
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+  color: var(--blanco);
+}
+
+.ubicacion {
+  display: flex;
+  align-items: flex-end;
+}
+
+/*SERVICIOS*/
+
+/*scroll snap*/
+.servicios, 
+.navegacion-principal, 
+.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+@media (min-width: 768px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5rem;
+  }
+}
+
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicio h3 {
+  color: var(--secundario);
+  font-weight: 400;
+}
+
+.servicio p {
+  line-height: 2;
+}
+
+.servicio .iconos {
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--primario);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/*CONTACTO*/
+
+.formulario {
+  background-color: var(--gris);
+  width: min(60rem, 100%); /*Utilizar el valor mas pequeños*/
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.formulario fieldset {
+  border: none;
+}
+
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primario);
+}
+
+@media (min-width: 768px) {
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /*Crear columnas*/
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem; /*Separacion de columnas*/
+  }
+
+  .campo:nth-child(3),
+  .campo:nth-child(4) {
+    grid-column: 1/3;
+  }
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.campo textarea {
+  height: 20rem;
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.input-boton {
+  display: flex;
+  justify-content: right;
+  margin-top: 3rem;
+}
+
+.boton:hover {
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+}
